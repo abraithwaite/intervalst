@@ -52,7 +52,7 @@ type interval[V, T any] struct {
 }
 
 func (it interval[V, T]) isInvalid(cmp CmpFunc[T]) bool {
-	return cmp.lte(it.end, it.start)
+	return cmp.lt(it.end, it.start)
 }
 
 func (it interval[V, T]) less(start, end T, cmp CmpFunc[T]) bool {
